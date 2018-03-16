@@ -1,0 +1,20 @@
+<section>
+  <header><h3>game types</h3></header>
+<div *ngFor="let gameType of gameTypes" class="gameType" [ngStyle]="{'border-bottom-color': gameType.color}">
+  {{gameType.name}} <button type="button" (click)="startGame(gameType)">start a new game</button>
+</div>
+</section>
+
+
+<section>
+  <header><h3>rooms</h3></header>
+  <a [routerLink]="['/rooms', room.id]" *ngFor="let room of rooms">
+    {{ room.gameType.name }} #{{ room.id }}
+
+    <span *ngFor="let player of room.players"
+         class="playerSpot"
+         [ngStyle]="{'background-color': !player.isOpen ? 'dimgrey' : false}"
+    ></span>
+  </a>
+</section>
+
