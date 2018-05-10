@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs/observable/of';
-import { Observable } from 'rxjs/Observable';
+import { Observable, of } from 'rxjs';
 
 export interface IGameType {
   id: string;
@@ -9,7 +8,7 @@ export interface IGameType {
 }
 
 export interface IPlayerForLobby {
-  isOpen: boolean
+  isOpen: boolean;
 }
 export interface IRoomForLobby {
   id: string;
@@ -35,7 +34,7 @@ export class TbsService {
         name: 'reversi',
         color: 'blue',
       }
-    ])
+    ]);
   }
 
   startGame(id: string): Observable<string> {
