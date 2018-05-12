@@ -1,1 +1,28 @@
-roomId = {{roomId}}
+<h3>Room '{{room.id}}'</h3>
+
+<div fxLayout fxLayoutGap="10px">
+  <div>
+    <h4>Players</h4>
+    <div *ngFor="let playerMeta of room.playersMeta; index as i">
+      {{i}}
+      <ng-container [ngSwitch]="playerMeta.type">
+        <ng-container *ngSwitchCase="'HUMAN'">
+          {{playerMeta.user | json}}
+        </ng-container>
+        <ng-container *ngSwitchCase="'ROBOT'">
+          I'm a ROBOT
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div>
+    <div>
+      <h4>Game Type</h4>
+      {{room.gameType | json}}
+    </div>
+    <div>
+      <h4>Game State</h4>
+      {{room.game | json}}
+    </div>
+  </div>
+</div>

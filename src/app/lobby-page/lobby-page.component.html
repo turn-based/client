@@ -1,20 +1,21 @@
-<section>
-  <header><h3>game types</h3></header>
-<div *ngFor="let gameType of gameTypes" class="gameType" [ngStyle]="{'border-bottom-color': gameType.color}">
-  {{gameType.name}} <button type="button" (click)="startGame(gameType)">start a new game</button>
+<h2>game types</h2>
+<div fxLayout fxLayoutAlign="center start" fxLayoutGap="16px">
+  <app-game-type-card *ngFor="let gameType of gameTypes" [gameType]="gameType"></app-game-type-card>
 </div>
-</section>
 
+<h2>rooms</h2>
+<div fxLayout fxLayoutAlign="center">
+  <mat-card fxLayout="column" style="width:400px;">
+    <a [routerLink]="['/rooms', room.id]" *ngFor="let room of rooms" fxLayout fxLayoutAlign="space-between">
+      <span>{{ room.gameType.name }} #{{ room.id }}</span>
 
-<section>
-  <header><h3>rooms</h3></header>
-  <a [routerLink]="['/rooms', room.id]" *ngFor="let room of rooms">
-    {{ room.gameType.name }} #{{ room.id }}
-
-    <span *ngFor="let player of room.players"
-         class="playerSpot"
-         [ngStyle]="{'background-color': !player.isOpen ? 'dimgrey' : false}"
-    ></span>
-  </a>
-</section>
+      <span>
+        <span *ngFor="let player of room.players"
+             class="playerSpot"
+             [ngStyle]="{'background-color': !player.isOpen ? 'dimgrey' : false}"
+        ></span>
+        </span>
+    </a>
+  </mat-card>
+</div>
 

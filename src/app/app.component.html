@@ -1,18 +1,13 @@
 <header>
+  <nav>
+    <a routerLink="lobby" routerLinkActive="active-link" mat-icon-button>
+      <mat-icon >home</mat-icon>
+    </a>
+  </nav>
   <h1 class="title mat-display-4">TBS</h1>
 </header>
 
-<nav>
-  <a routerLink="lobby" routerLinkActive="active-link">lobby</a>
-</nav>
+<hr>
 
-<section fxLayout fxLayoutAlign="center start" fxLayoutGap="16px">
-  <app-game-type-card></app-game-type-card>
-  <app-game-type-card></app-game-type-card>
-  <app-game-type-card></app-game-type-card>
-</section>
+<router-outlet></router-outlet>
 
-<section>
-  <hr>
-  <router-outlet></router-outlet>
-</section>

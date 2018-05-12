@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, shareReplay } from 'rxjs/operators';
+import { IRoom, TbsService } from '../tbs.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-room-page',
@@ -8,15 +9,17 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./room-page.component.scss']
 })
 export class RoomPageComponent implements OnInit {
-  roomId: string;
+  room: IRoom;
 
-  constructor(private route: ActivatedRoute) {
-    route.paramMap.subscribe((paramMap) => {
-      this.roomId = paramMap.get('roomId');
-    });
+  constructor(private route: ActivatedRoute, private tbs: TbsService) {
   }
 
   ngOnInit() {
+    this.route.paramMap.pipe(
+      switchMap((paramMap) => this.tbs.getRoom(paramMap.get('roomId')))
+    ).subscribe((room) => {
+      this.room = room;
+    });
   }
 
 }
