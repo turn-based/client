@@ -11,8 +11,7 @@ import { switchMap } from 'rxjs/operators';
 export class RoomPageComponent implements OnInit {
   room: IRoom;
 
-  constructor(private route: ActivatedRoute, private tbs: TbsService) {
-  }
+  constructor(private route: ActivatedRoute, private tbs: TbsService) {}
 
   ngOnInit() {
     this.route.paramMap.pipe(
@@ -21,5 +20,4 @@ export class RoomPageComponent implements OnInit {
       this.room = room;
     });
   }
-
 }

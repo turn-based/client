@@ -9,14 +9,17 @@ import { RoomPageComponent } from './room-page/room-page.component';
 import { MatButtonModule, MatCardModule, MatDividerModule, MatIconModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GameTypeCardComponent } from './game-type-card/game-type-card.component';
-
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './core/reducers';
+import { TicTacToeGameComponent } from './room-page/tic-tac-toe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LobbyPageComponent,
     RoomPageComponent,
-    GameTypeCardComponent
+    GameTypeCardComponent,
+    TicTacToeGameComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,8 @@ import { GameTypeCardComponent } from './game-type-card/game-type-card.component
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+
+    StoreModule.forRoot(reducers),
   ],
   providers: [],
   bootstrap: [AppComponent]
