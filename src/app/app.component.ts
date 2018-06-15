@@ -10,5 +10,5 @@ import { TbsService } from './tbs.service';
   ]
 })
 export class AppComponent {
-  title = 'app';
+  title = 'tbs-client';
 }
