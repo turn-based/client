@@ -12,7 +12,7 @@ export enum GameActionTypes {
 export interface IChangeRequestPayload {
   type: string;
   args: any[];
-  playerID: string;
+  playerID?: '0' | '1' | '2' | '3';
 }
 
 export class Move implements Action {

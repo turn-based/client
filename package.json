@@ -26,6 +26,7 @@
     "@ngrx/store": "^6.0.1",
     "boardgame.io": "amitport/boardgame.io",
     "core-js": "^2.5.4",
+    "ngx-init": "0.1.0",
     "react": "^16.4.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

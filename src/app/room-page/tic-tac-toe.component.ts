@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { takeUntil } from 'rxjs/operators';
 import { TbsService } from '../tbs.service';
@@ -9,13 +9,17 @@ import { Move, Reset } from '../core/game-actions';
 @Component({
   selector: 'app-tic-tac-toe',
   template: `
-    <table id="board">
-      <tr *ngFor="let i of [0, 1, 2]">
-        <td *ngFor="let j of [0, 1, 2]" [ngClass]="{active: state.isActive}" (click)="clickCell(3 * i + j)">{{state.G.cells[3 * i + j]}}</td>
-      </tr>
-    </table>
-    <div>Player: this.props.playerID?</div>
-    <div id="winner">Winner: {{state.ctx.gameover}}</div>;
+    <ng-container *ngxInit="(state$ | async) as state">
+      <table id="board">
+        <tr *ngFor="let i of [0, 1, 2]">
+          <ng-container *ngFor="let j of [0, 1, 2]">
+              <td *ngxInit="3 * i + j as id" [ngClass]="{active: isActive(state, id)}" (click)="clickCell(id)">{{state.G.cells[id]}}</td>
+          </ng-container>
+        </tr>
+      </table>
+      <div>Player: this.props.playerID?</div>
+      <div id="winner">Winner: {{state.ctx | json}}</div>;
+    </ng-container>
   `,
   styles: [`
     #board {
@@ -50,11 +54,19 @@ import { Move, Reset } from '../core/game-actions';
   `]
 })
 export class TicTacToeGameComponent implements OnInit, OnDestroy {
-  state: any;
+  // state: any;
   _destroy = new Subject();
+  state$: any;
 
   constructor(private route: ActivatedRoute, private tbs: TbsService, private store: Store<{game: any}>) {
-    store.pipe(select('game'), takeUntil(this._destroy)).subscribe(state => {this.state = state;});
+    this.state$ = store.pipe(select('game'));//store.pipe(select('game'), takeUntil(this._destroy));
+
+    // .subscribe(state => {this.state = state;});
+  }
+
+  isActive(state, id) {
+    // console.log(state)
+    return state.G.cells[id] != null && state.ctx.gameover === undefined;
   }
 
   ngOnInit() {
@@ -67,7 +79,6 @@ export class TicTacToeGameComponent implements OnInit, OnDestroy {
   }
 
   clickCell(id) {
-    console.log(id);
-    this.store.dispatch(new Move({type: 'clickCell', args: [id], playerID: '0'}));
+    this.store.dispatch(new Move({type: 'clickCell', args: [id]}));
   }
 }

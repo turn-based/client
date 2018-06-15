@@ -12,6 +12,7 @@ import { GameTypeCardComponent } from './game-type-card/game-type-card.component
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './core/reducers';
 import { TicTacToeGameComponent } from './room-page/tic-tac-toe.component';
+import { NgxInitModule } from 'ngx-init';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TicTacToeGameComponent } from './room-page/tic-tac-toe.component';
     MatIconModule,
 
     StoreModule.forRoot(reducers),
+    NgxInitModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
