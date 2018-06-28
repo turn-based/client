@@ -1,7 +1,3 @@
-import { ActionReducerMap } from '@ngrx/store';
-import { GameActionsUnion } from './game-actions';
-import { CreateGameReducer, Game } from 'boardgame.io/dist/core';
-
 /*
  * Copyright 2017 The boardgame.io Authors
  *
@@ -9,6 +5,10 @@ import { CreateGameReducer, Game } from 'boardgame.io/dist/core';
  * license that can be found in the LICENSE file or at
  * https://opensource.org/licenses/MIT.
  */
+
+import { ActionReducerMap } from '@ngrx/store';
+import { GameActionsUnion } from './game-actions';
+import { CreateGameReducer, Game } from 'boardgame.io/dist/core';
 
 function IsVictory(cells) {
   const positions = [
@@ -61,11 +61,15 @@ const TicTacToe = Game({
 
     endGameIf: (G, ctx) => {
       if (IsVictory(G.cells)) {
-        return ctx.currentPlayer;
+        return { winner: ctx.currentPlayer };
+      }
+      if (G.cells.filter(c => c === null).length == 0) {
+        return { draw: true };
       }
     },
   },
 });
+
 
 export interface State {
   game: any;
