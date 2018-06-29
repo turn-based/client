@@ -1,7 +1,7 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { GameActionsUnion } from './game-actions';
 import { CreateGameReducer, Game } from 'boardgame.io/dist/core';
-import TicTacToe from 'boardgame.io-examples/examples/react/modules/tic-tac-toe/game';
+import { TicTacToe } from 'boardgame.io-pure-games';
 
 export interface State {
   game: any;

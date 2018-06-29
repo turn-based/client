@@ -26,7 +26,7 @@
     "@ngrx/store": "^6.0.1",
     "@ngrx/store-devtools": "^6.0.1",
     "boardgame.io": "^0.23.2",
-    "boardgame.io-examples": "github:turn-based/boardgame.io-examples",
+    "boardgame.io-pure-games": "github:turn-based/boardgame.io-pure-games",
     "core-js": "^2.5.4",
     "ngx-init": "0.1.0",
     "ngx-json-viewer": "^2.3.0",
