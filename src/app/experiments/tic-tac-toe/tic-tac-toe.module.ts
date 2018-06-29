@@ -8,12 +8,14 @@ import { reducers, State } from '../../core/reducers';
 import { TicTacToeBoardComponent } from './board/tic-tac-toe-board.component';
 import { NgxInitModule } from 'ngx-init';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     NgxInitModule,
     NgxJsonViewerModule,
+    FlexLayoutModule,
     RouterModule.forChild([
       {
         path: '',

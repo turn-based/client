@@ -1,3 +1,5 @@
-<app-actionable-table [table]="state.board" (cellClicked)="onCellClicked($event)"></app-actionable-table>
+<div fxLayout fxLayoutGap="16px" fxLayoutAlign="space-between">
+  <app-actionable-table [table]="state.board" (cellClicked)="onCellClicked($event)"></app-actionable-table>
 
-<ngx-json-viewer [json]="game"></ngx-json-viewer>
+  <ngx-json-viewer [json]="game"></ngx-json-viewer>
+</div>

@@ -17,7 +17,7 @@ export class GameTypeCardComponent implements OnInit {
 
   play(gameType: IGameType) {
     this.tbs.startGame(gameType.id).subscribe((roomId) => {
-      this.router.navigateByUrl(`/rooms/${roomId}`);
+      this.router.navigateByUrl(`/nav/rooms/${roomId}`);
     });
 
   }

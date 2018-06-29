@@ -9,24 +9,31 @@ const routes: Routes = [
   {
     path: 'nav',
     component: NavComponent,
-  },
-  {
-    path: 'lobby',
-    component: LobbyPageComponent,
-  },
-  {
-    path: 'rooms/:roomId',
-    component: RoomPageComponent,
+    children: [
+      {
+        path: 'lobby',
+        component: LobbyPageComponent,
+      },
+      {
+        path: 'rooms/:roomId',
+        component: RoomPageComponent,
+      },
+      {
+        path: 'experiments/tic-tac-toe',
+        loadChildren: './experiments/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'lobby'
+      },
+    ]
   },
   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'nav'
   },
-  {
-    path: 'experiments/tic-tac-toe',
-    loadChildren: './experiments/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
-  }
 ];
 
 @NgModule({
