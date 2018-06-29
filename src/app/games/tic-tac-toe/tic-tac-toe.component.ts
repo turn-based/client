@@ -9,17 +9,15 @@ export const selectTicTacToe = createFeatureSelector<State>('tic-tac-toe');
 
 @Component({
   selector: 'app-tic-tac-toe',
-  templateUrl: './tic-tac-toe.component.html',
-  styleUrls: ['./tic-tac-toe.component.scss']
+  template: `
+    <div fxLayout fxLayoutGap="16px" fxLayoutAlign="space-between">
+      <app-tic-tac-toe-board [G]="game.G" [ctx]="game.ctx" (cellClicked)="onCellClicked($event)"></app-tic-tac-toe-board>
+
+      <ngx-json-viewer [json]="game"></ngx-json-viewer>
+    </div>
+  `,
 })
 export class TicTacToeComponent implements OnInit, OnDestroy {
-  state = {
-    board: [
-      [{isActionable: false, row: 0, col: 0, value: 't'}, {isActionable: true, row: 0, col: 1}, {isActionable: true, row: 0, col: 2}],
-      [{isActionable: true, row: 1, col: 0}, {isActionable: true, row: 1, col: 1, value: '3'}, {isActionable: true, row: 1, col: 2}],
-      [{isActionable: true, row: 2, col: 0}, {isActionable: true, row: 2, col: 1}, {isActionable: true, row: 2, col: 2}],
-    ]
-  };
   private game: any;
 
   private _destroy = new Subject();
