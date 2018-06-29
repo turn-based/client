@@ -10,14 +10,13 @@ import { MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatToo
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GameTypeCardComponent } from './game-type-card/game-type-card.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './core/reducers';
-import { TicTacToeGameComponent } from './room-page/tic-tac-toe.component';
 import { NgxInitModule } from 'ngx-init';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GamesModule } from './games/games.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LobbyPageComponent,
     RoomPageComponent,
     GameTypeCardComponent,
-    TicTacToeGameComponent,
+    // TicTacToeGameComponent,
     NavComponent,
   ],
   imports: [
@@ -40,7 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatIconModule,
 
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
@@ -55,6 +54,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSidenavModule,
 
     MatListModule,
+    GamesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

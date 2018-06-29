@@ -12,12 +12,12 @@
     border: 3px solid #aaa;
     background: #fff;
 
-    &.actionable {
+    &.active {
       cursor: pointer;
       background: #eeffe9;
     }
 
-    &.actionable:hover {
+    &.active:hover {
       background: #eeffff;
     }
   }

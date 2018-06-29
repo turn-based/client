@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Move } from '../../../core/game-actions';
 
 @Component({
   selector: 'app-tic-tac-toe-board',
@@ -7,14 +8,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
       <table class="tic-tac-toe-board">
           <tr *ngFor="let i of [0, 1, 2]">
             <ng-container *ngFor="let j of [0, 1, 2]">
-              <td *ngxInit="3 * i + j as id" [ngClass]="{active: isActive(id)}" (click)="onClick(id)">{{state.G.cells[id]}}</td>
+              <td *ngxInit="3 * i + j as id" [ngClass]="{active: isActive(id)}" (click)="onClick(id)">{{G.cells[id]}}</td>
             </ng-container>
           </tr>
       </table>
       <div *ngIf="!isPreview && playerID !== null">Player: {{playerID}}</div>
-      <ng-container *ngIf="state.ctx.gameover">
+      <ng-container *ngIf="ctx.gameover">
         <div class="winner">
-          {{state.ctx.gameover.winner !== undefined ? 'Winner: ' + state.ctx.gameover.winner : 'Draw!'}}
+          {{ctx.gameover.winner !== undefined ? 'Winner: ' + ctx.gameover.winner : 'Draw!'}}
         </div>
       </ng-container>
       <div *ngIf="!isPreview && isMultiplayer && !isConnected">Disconnected</div>
@@ -24,15 +25,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./tic-tac-toe-board.component.scss']
 })
 export class TicTacToeBoardComponent implements OnInit {
-  state: {
-    G: any,
-    ctx: any
-  };
+  @Input() G: any;
+  @Input() ctx: any;
 
-  playerID = 'playerId?';
-  isPreview = false;
-  isMultiplayer = false;
-  isConnected = true;
+  @Input() playerID = 'playerId?';
+  @Input() isPreview = false;
+  @Input() isMultiplayer = false;
+  @Input() isConnected = true;
 
   @Output() cellClicked = new EventEmitter();
 
@@ -46,10 +45,13 @@ export class TicTacToeBoardComponent implements OnInit {
   }
 
   isActive(id) {
-    return this.isActive && this.state.G.cells[id] === null;
+    return this.isActive && this.G.cells[id] === null;
   }
 
   ngOnInit() {
   }
 
+  clickCell(id) {
+    // this.store.dispatch(new Move({type: 'clickCell', args: [id]}));
+  }
 }

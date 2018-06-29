@@ -3,6 +3,7 @@ import { createFeatureSelector, select, Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { State } from '../../core/reducers';
+import { Move } from '../../core/game-actions';
 
 export const selectTicTacToe = createFeatureSelector<State>('tic-tac-toe');
 
@@ -32,8 +33,8 @@ export class TicTacToeComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
 
-  onCellClicked(event) {
-    console.log(event)
+  onCellClicked(id) {
+    this.store.dispatch(new Move({type: 'clickCell', args: [id]}));
   }
 
   ngOnDestroy() {
