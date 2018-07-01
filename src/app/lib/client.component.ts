@@ -30,7 +30,7 @@ export class ClientComponent implements OnInit, OnChanges, AfterContentInit {
   @Input() game: any;
   @Input() numPlayers: number;
   @Input() board: any;
-  @Input() multiplayer: boolean;
+  @Input() multiplayer: any;
   @Input() ai: any;
   @Input() enhancer: any;
 
