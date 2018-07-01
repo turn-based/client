@@ -6,16 +6,33 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item routerLink="lobby">lobby</a>
+    <mat-toolbar color="primary">Examples</mat-toolbar>
+    <mat-nav-list dense>
+      <h3 matSubheader>Tic-Tac-Toe</h3>
+      <a mat-list-item routerLink="tic-tac-toe/singleplayer">Singleplayer</a>
+      <a mat-list-item routerLink="tic-tac-toe/multiplayer">Multiplayer</a>
+      <a mat-list-item routerLink="tic-tac-toe/authenticated">Authenticated</a>
+      <a mat-list-item routerLink="tic-tac-toe/spectator">Spectator</a>
+
+      <h3 matSubheader>Chess</h3>
+      <a mat-list-item routerLink="chess/Singelplayer">Singelplayer</a>
+      <a mat-list-item routerLink="chess/multiplayer">Multiplayer</a>
+
+
+      <h3 matSubheader>Phases</h3>
+      <a mat-list-item routerLink="phases">Phases</a>
+      <a mat-list-item routerLink="diagram">Diagram</a>
+
+      <h3 matSubheader>Turn Orders</h3>
+      <a mat-list-item routerLink="turn-orders/simultaneous-moves">Simultaneous Moves</a>
+
+      <h3 matSubheader>Random API</h3>
+      <a mat-list-item routerLink="random">Examples</a>
+
+      <h3 matSubheader>Secret State</h3>
+      <a mat-list-item routerLink="liars-dice">Liar's Dice</a>
     </mat-nav-list>
-    <mat-nav-list>
-      <a mat-list-item routerLink="experiments/tic-tac-toe">experiments/tic-tac-toe</a>
-    </mat-nav-list>
-    <mat-nav-list>
-      <a mat-list-item routerLink="experiments/client">experiments/client</a>
-    </mat-nav-list>
+
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar>

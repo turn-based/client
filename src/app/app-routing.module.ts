@@ -1,42 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LobbyPageComponent } from './lobby-page/lobby-page.component';
-import { RoomPageComponent } from './room-page/room-page.component';
-import { TicTacToeModule } from './experiments/tic-tac-toe/tic-tac-toe.module';
 import { NavComponent } from './nav/nav.component';
+import { SinglePlayerExampleComponent } from './examples/tic-tac-toe/single-player-example.component';
+import { MultiPlayerExampleComponent } from './examples/tic-tac-toe/multi-player-example.component';
 
 const routes: Routes = [
   {
-    path: 'nav',
+    path: 'examples',
     component: NavComponent,
     children: [
       {
-        path: 'lobby',
-        component: LobbyPageComponent,
+        path: 'tic-tac-toe/singleplayer',
+        component: SinglePlayerExampleComponent,
       },
       {
-        path: 'rooms/:roomId',
-        component: RoomPageComponent,
-      },
-      {
-        path: 'experiments/tic-tac-toe',
-        loadChildren: './experiments/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
-      },
-      {
-        path: 'experiments/client',
-        loadChildren: './experiments/client/client.module#ClientModule'
+        path: 'tic-tac-toe/multiplayer',
+        component: MultiPlayerExampleComponent,
       },
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'lobby'
+        redirectTo: 'tic-tac-toe/singleplayer'
       },
     ]
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'nav'
+    redirectTo: 'examples'
   },
 ];
 

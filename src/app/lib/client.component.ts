@@ -1,15 +1,12 @@
-import { Component, ContentChild, ElementRef, Input, OnInit, TemplateRef } from '@angular/core';
-import { Client as RawClient } from 'boardgame.io/dist/client';
-import { TicTacToeBoardComponent } from '../../games/tic-tac-toe/board/tic-tac-toe-board.component';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { Client as RawClient, Debug } from 'boardgame.io/dist/client';
 
 @Component({
   selector: 'app-client',
-  template: `
-    <div>gameId<{{gameId}}> | playerId<{{playerId}}></div>
-      <div fxLayout fxLayoutGap="16px" fxLayoutAlign="space-between" *ngxInit="rawClient.getState() as state">
+  template: `    
+    <div style="height: 600px;" fxLayout fxLayoutGap="16px" fxLayoutAlign="space-between" *ngxInit="rawClient.getState() as state">
 
-        <ng-container *ngComponentOutlet="board;
+      <ng-container *ngComponentOutlet="board;
                                           ndcDynamicInputs: {
                                             G: state.G,
                                             ctx: state.ctx
@@ -17,10 +14,20 @@ import { TicTacToeBoardComponent } from '../../games/tic-tac-toe/board/tic-tac-t
                                           ndcDynamicOutputs: {
                                             cellClicked: rawClient.moves.clickCell
                                           }">
-        </ng-container>
-        
-        <ngx-json-viewer [json]="state"></ngx-json-viewer>
-      </div>
+      </ng-container>
+
+      <app-debug
+        [gamestate]="rawClient.getState()"
+        [gameID]="gameId"
+        [playerID]="playerId"
+        [moves]="rawClient.moves"
+        [events]="rawClient.events"
+        [store]="rawClient.store"
+        [step]="rawClient.step"
+        [reset]="rawClient.reset"
+        [reducer]="rawClient.reducer"
+      ></app-debug>
+    </div>
   `
 })
 export class ClientComponent implements OnInit {

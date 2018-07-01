@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Move } from '../../../core/game-actions';
 
 @Component({
   selector: 'app-tic-tac-toe-board',
@@ -49,9 +48,5 @@ export class TicTacToeBoardComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  clickCell(id) {
-    // this.store.dispatch(new Move({type: 'clickCell', args: [id]}));
   }
 }
