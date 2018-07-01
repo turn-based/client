@@ -20,6 +20,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SinglePlayerExampleComponent } from './examples/tic-tac-toe/single-player-example.component';
 import { TurnBasedCoreModule } from './lib/turn-based-core.module';
+import { MultiPlayerExampleComponent } from './examples/tic-tac-toe/multi-player-example.component';
+import { TicTacToeBoardComponent } from './examples/tic-tac-toe/tic-tac-toe-board.component';
+import { NgxInitModule } from 'ngx-init';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { TurnBasedCoreModule } from './lib/turn-based-core.module';
     NavComponent,
 
     SinglePlayerExampleComponent,
+    MultiPlayerExampleComponent,
+
+    TicTacToeBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,8 +56,12 @@ import { TurnBasedCoreModule } from './lib/turn-based-core.module';
     MatListModule,
 
     TurnBasedCoreModule,
+    NgxInitModule,
   ],
   providers: [],
+  entryComponents: [
+    TicTacToeBoardComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

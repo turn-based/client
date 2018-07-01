@@ -25,7 +25,7 @@
     "@angular/router": "^6.0.3",
     "@ngrx/store": "^6.0.1",
     "@ngrx/store-devtools": "^6.0.1",
-    "boardgame.io": "github:amitport/boardgame.io#master",
+    "boardgame.io": "github:google/boardgame.io#master",
     "boardgame.io-pure-games": "github:turn-based/boardgame.io-pure-games#master",
     "core-js": "^2.5.4",
     "ng-dynamic-component": "^3.0.0",

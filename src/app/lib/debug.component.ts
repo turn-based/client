@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Debug } from 'boardgame.io/dist/client';
+import { Debug } from 'boardgame.io/dist/react';
 import * as uuid from 'uuid';
 
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';

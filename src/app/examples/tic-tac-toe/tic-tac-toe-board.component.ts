@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
       <table class="tic-tac-toe-board">
           <tr *ngFor="let i of [0, 1, 2]">
             <ng-container *ngFor="let j of [0, 1, 2]">
-              <td *ngxInit="3 * i + j as id" [ngClass]="{active: isActive(id)}" (click)="onClick(id)">{{G.cells[id]}}</td>
+              <td *ngxInit="3 * i + j as id" [ngClass]="{active: isCellActive(id)}" (click)="onClick(id)">{{G.cells[id]}}</td>
             </ng-container>
           </tr>
       </table>
@@ -23,30 +23,23 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   `,
   styleUrls: ['./tic-tac-toe-board.component.scss']
 })
-export class TicTacToeBoardComponent implements OnInit {
+export class TicTacToeBoardComponent {
   @Input() G: any;
   @Input() ctx: any;
-
-  @Input() playerID = 'playerId?';
-  @Input() isPreview = false;
-  @Input() isMultiplayer = false;
-  @Input() isConnected = true;
-
-  @Output() cellClicked = new EventEmitter();
-
-  constructor() { }
-
+  @Input() moves: any;
+  @Input() playerID: string;
+  @Input() isActive: boolean;
+  @Input() isMultiplayer: boolean;
+  @Input() isConnected: boolean;
+  @Input() isPreview: boolean;
 
   onClick(id) {
-    if (this.isActive(id)) {
-      this.cellClicked.emit(id);
+    if (this.isCellActive(id)) {
+      this.moves.clickCell(id);
     }
   }
 
-  isActive(id) {
+  isCellActive(id) {
     return this.isActive && this.G.cells[id] === null;
-  }
-
-  ngOnInit() {
   }
 }
