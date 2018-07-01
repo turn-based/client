@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxInitModule } from 'ngx-init';
-import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { DynamicModule } from 'ng-dynamic-component';
 import { ClientComponent } from './client.component';
 import { TicTacToeBoardComponent } from '../examples/tic-tac-toe/tic-tac-toe-board.component';
@@ -20,8 +18,6 @@ import { MultiPlayerExampleComponent } from '../examples/tic-tac-toe/multi-playe
   imports: [
     CommonModule,
 
-    FlexLayoutModule,
-    NgxJsonViewerModule,
     NgxInitModule,
 
     DynamicModule.withComponents([
