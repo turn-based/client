@@ -5,10 +5,13 @@ import { ai } from './ai';
 
 @Component({
   template: `
-    <app-client [game]="TicTacToe"
-                [board]="TicTacToeBoardComponent"
-                [ai]="ai"
-                gameID="gameID"></app-client>
+    <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="32px">
+      <strong>Single Player</strong>
+      <app-client [game]="TicTacToe"
+                  [board]="TicTacToeBoardComponent"
+                  [ai]="ai"
+                  gameID="gameID"></app-client>
+    </div>
   `
 })
 export class SinglePlayerExampleComponent {

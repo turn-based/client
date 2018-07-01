@@ -9,28 +9,55 @@
     <mat-toolbar color="primary">Examples</mat-toolbar>
     <mat-nav-list dense>
       <h3 matSubheader>Tic-Tac-Toe</h3>
-      <a mat-list-item routerLink="tic-tac-toe/singleplayer">Singleplayer</a>
-      <a mat-list-item routerLink="tic-tac-toe/multiplayer">Multiplayer</a>
-      <a mat-list-item routerLink="tic-tac-toe/authenticated">Authenticated</a>
-      <a mat-list-item routerLink="tic-tac-toe/spectator">Spectator</a>
+      <a mat-list-item routerLink="tic-tac-toe/singleplayer">
+        <mat-icon class="status status--supported">check_circle</mat-icon>
+        Singleplayer
+      </a>
+      <a mat-list-item routerLink="tic-tac-toe/multiplayer">
+        <mat-icon class="status status--supported">check_circle</mat-icon>
+        Multiplayer
+      </a>
+      <a mat-list-item routerLink="tic-tac-toe/authenticated">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Authenticated
+      </a>
+      <a mat-list-item routerLink="tic-tac-toe/spectator">
+        <mat-icon class="status status--supported">check_circle</mat-icon>
+        Spectator
+      </a>
 
       <h3 matSubheader>Chess</h3>
-      <a mat-list-item routerLink="chess/singleplayer">Singelplayer</a>
-      <a mat-list-item routerLink="chess/multiplayer">Multiplayer</a>
+      <a mat-list-item routerLink="chess/singleplayer">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Singleplayer
+      </a>
+      <a mat-list-item routerLink="chess/multiplayer">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Multiplayer</a>
 
 
       <h3 matSubheader>Phases</h3>
-      <a mat-list-item routerLink="phases">Phases</a>
-      <a mat-list-item routerLink="diagram">Diagram</a>
+      <a mat-list-item routerLink="phases">
+        <mat-icon class="status status--unsupported">check_circle</mat-icon>
+        Phases</a>
+      <a mat-list-item routerLink="diagram">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Diagram</a>
 
       <h3 matSubheader>Turn Orders</h3>
-      <a mat-list-item routerLink="turn-orders/simultaneous-moves">Simultaneous Moves</a>
+      <a mat-list-item routerLink="turn-orders/simultaneous-moves">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Simultaneous Moves</a>
 
       <h3 matSubheader>Random API</h3>
-      <a mat-list-item routerLink="random">Examples</a>
+      <a mat-list-item routerLink="random">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Examples</a>
 
       <h3 matSubheader>Secret State</h3>
-      <a mat-list-item routerLink="liars-dice">Liar's Dice</a>
+      <a mat-list-item routerLink="liars-dice">
+        <mat-icon class="status status--unsupported">remove_circle</mat-icon>
+        Liar's Dice</a>
     </mat-nav-list>
 
   </mat-sidenav>

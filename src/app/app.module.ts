@@ -25,6 +25,10 @@ import { TicTacToeBoardComponent } from './examples/tic-tac-toe/tic-tac-toe-boar
 import { NgxInitModule } from 'ngx-init';
 import { ChessSinglePlayerExampleComponent } from './examples/chess/chess-single-player-example.component';
 import { ChessBoardComponent } from './examples/chess/chess-board.component';
+import { AuthenticatedExampleComponent } from './examples/tic-tac-toe/authenticated-example.component';
+import { SpectatorExampleComponent } from './examples/tic-tac-toe/spectator-example.component';
+import { UnsupportedExampleComponent } from './examples/unsupported-example.component';
+import { PhasesExampleComponent } from './examples/phases/phases-example.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,12 @@ import { ChessBoardComponent } from './examples/chess/chess-board.component';
 
     SinglePlayerExampleComponent,
     MultiPlayerExampleComponent,
+    AuthenticatedExampleComponent,
+    SpectatorExampleComponent,
+
+    PhasesExampleComponent,
+
+    UnsupportedExampleComponent,
 
     ChessSinglePlayerExampleComponent,
 

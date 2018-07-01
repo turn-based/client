@@ -11,7 +11,7 @@ import { TicTacToeBoardComponent } from './tic-tac-toe-board.component';
                     [board]="TicTacToeBoardComponent"
                     [debug]="false"
                     [multiplayer]="{server: 'localhost:8000'}"
-                    gameID="multi"
+                    gameID="spectator"
                     playerID="0"></app-client>
       </div>
       <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="32px">
@@ -20,14 +20,22 @@ import { TicTacToeBoardComponent } from './tic-tac-toe-board.component';
                     [board]="TicTacToeBoardComponent"
                     [debug]="false"
                     [multiplayer]="{server: 'localhost:8000'}"
-                    gameID="multi"
+                    gameID="spectator"
+                    playerID="1"></app-client>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="32px">
+        <strong>Spectator</strong>
+        <app-client [game]="TicTacToe"
+                    [board]="TicTacToeBoardComponent"
+                    [debug]="false"
+                    [multiplayer]="{server: 'localhost:8000'}"
+                    gameID="spectator"
                     playerID="1"></app-client>
       </div>
     </div>
-    
   `
 })
-export class MultiPlayerExampleComponent {
+export class SpectatorExampleComponent {
   TicTacToe = TicTacToe;
   TicTacToeBoardComponent = TicTacToeBoardComponent;
 }

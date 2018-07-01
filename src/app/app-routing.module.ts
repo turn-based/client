@@ -4,6 +4,10 @@ import { NavComponent } from './nav/nav.component';
 import { SinglePlayerExampleComponent } from './examples/tic-tac-toe/single-player-example.component';
 import { MultiPlayerExampleComponent } from './examples/tic-tac-toe/multi-player-example.component';
 import { ChessSinglePlayerExampleComponent } from './examples/chess/chess-single-player-example.component';
+import { AuthenticatedExampleComponent } from './examples/tic-tac-toe/authenticated-example.component';
+import { SpectatorExampleComponent } from './examples/tic-tac-toe/spectator-example.component';
+import { UnsupportedExampleComponent } from './examples/unsupported-example.component';
+import { PhasesExampleComponent } from './examples/phases/phases-example.component';
 
 const routes: Routes = [
   {
@@ -21,22 +25,45 @@ const routes: Routes = [
         path: 'tic-tac-toe/multiplayer',
         component: MultiPlayerExampleComponent,
         data: {
-          title: 'Multiplayer'
+          title: 'Tic-Tac-Toe Multiplayer'
         }
       },
-
       {
-        path: 'chess/singleplayer',
-        component: ChessSinglePlayerExampleComponent,
+        path: 'tic-tac-toe/authenticated',
+        component: AuthenticatedExampleComponent,
         data: {
-          title: 'Chess Singleplayer'
+          title: 'Tic-Tac-Toe Authenticated'
         }
       },
-
+      {
+        path: 'tic-tac-toe/spectator',
+        component: SpectatorExampleComponent,
+        data: {
+          title: 'Tic-Tac-Toe Spectator'
+        }
+      },
+      {
+        path: 'phases',
+        component: PhasesExampleComponent,
+        data: {
+          title: 'phases'
+        }
+      },
+      {
+        path: 'unsupported-example',
+        component: UnsupportedExampleComponent,
+        data: {
+          title: 'Unsupported Example'
+        }
+      },
       {
         path: '',
         pathMatch: 'full',
         redirectTo: 'tic-tac-toe/singleplayer'
+      },
+      {
+        path: '**',
+        redirectTo: 'unsupported-example'
       },
     ]
   },

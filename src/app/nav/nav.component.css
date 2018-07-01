@@ -6,3 +6,15 @@
   width: 200px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
+
+.status {
+  margin-right: 12px;
+}
+
+.status.status--supported {
+  color: #83e141;
+}
+
+.status.status--unsupported {
+  color: #fa4f4f;
+}
