@@ -23,6 +23,8 @@ import { TurnBasedCoreModule } from './lib/turn-based-core.module';
 import { MultiPlayerExampleComponent } from './examples/tic-tac-toe/multi-player-example.component';
 import { TicTacToeBoardComponent } from './examples/tic-tac-toe/tic-tac-toe-board.component';
 import { NgxInitModule } from 'ngx-init';
+import { ChessSinglePlayerExampleComponent } from './examples/chess/chess-single-player-example.component';
+import { ChessBoardComponent } from './examples/chess/chess-board.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,10 @@ import { NgxInitModule } from 'ngx-init';
     SinglePlayerExampleComponent,
     MultiPlayerExampleComponent,
 
+    ChessSinglePlayerExampleComponent,
+
     TicTacToeBoardComponent,
+    ChessBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { NgxInitModule } from 'ngx-init';
   ],
   providers: [],
   entryComponents: [
-    TicTacToeBoardComponent
+    TicTacToeBoardComponent,
+    ChessBoardComponent,
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { SinglePlayerExampleComponent } from './examples/tic-tac-toe/single-player-example.component';
 import { MultiPlayerExampleComponent } from './examples/tic-tac-toe/multi-player-example.component';
+import { ChessSinglePlayerExampleComponent } from './examples/chess/chess-single-player-example.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
         path: 'tic-tac-toe/singleplayer',
         component: SinglePlayerExampleComponent,
         data: {
-          title: 'Singleplayer'
+          title: 'Tic-Tac-Toe Singleplayer'
         }
       },
       {
@@ -23,6 +24,15 @@ const routes: Routes = [
           title: 'Multiplayer'
         }
       },
+
+      {
+        path: 'chess/singleplayer',
+        component: ChessSinglePlayerExampleComponent,
+        data: {
+          title: 'Chess Singleplayer'
+        }
+      },
+
       {
         path: '',
         pathMatch: 'full',
