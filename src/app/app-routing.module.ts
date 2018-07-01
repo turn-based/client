@@ -12,10 +12,16 @@ const routes: Routes = [
       {
         path: 'tic-tac-toe/singleplayer',
         component: SinglePlayerExampleComponent,
+        data: {
+          title: 'Singleplayer'
+        }
       },
       {
         path: 'tic-tac-toe/multiplayer',
         component: MultiPlayerExampleComponent,
+        data: {
+          title: 'Multiplayer'
+        }
       },
       {
         path: '',

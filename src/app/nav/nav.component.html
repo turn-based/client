@@ -44,7 +44,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <!--<span>Application Title</span>-->
+      <span>{{(activatedRoute.firstChild.data | async).title}}</span>
     </mat-toolbar>
     <div style="padding: 16px;">
       <router-outlet></router-outlet>
