@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-tic-tac-toe-board',
   template: `
     <div>
       <table class="tic-tac-toe-board">

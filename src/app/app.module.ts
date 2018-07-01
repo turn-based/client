@@ -28,7 +28,7 @@ import { ChessBoardComponent } from './examples/chess/chess-board.component';
 import { AuthenticatedExampleComponent } from './examples/tic-tac-toe/authenticated-example.component';
 import { SpectatorExampleComponent } from './examples/tic-tac-toe/spectator-example.component';
 import { UnsupportedExampleComponent } from './examples/unsupported-example.component';
-import { PhasesExampleComponent } from './examples/phases/phases-example.component';
+import { PhasesBoardComponent, PhasesExampleComponent } from './examples/phases/phases-example.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +49,7 @@ import { PhasesExampleComponent } from './examples/phases/phases-example.compone
 
     TicTacToeBoardComponent,
     ChessBoardComponent,
+    PhasesBoardComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +78,7 @@ import { PhasesExampleComponent } from './examples/phases/phases-example.compone
   entryComponents: [
     TicTacToeBoardComponent,
     ChessBoardComponent,
+    PhasesBoardComponent,
   ],
   bootstrap: [AppComponent]
 })
