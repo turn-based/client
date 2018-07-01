@@ -23,6 +23,10 @@ const routes: Routes = [
         loadChildren: './experiments/tic-tac-toe/tic-tac-toe.module#TicTacToeModule'
       },
       {
+        path: 'experiments/client',
+        loadChildren: './experiments/client/client.module#ClientModule'
+      },
+      {
         path: '',
         pathMatch: 'full',
         redirectTo: 'lobby'

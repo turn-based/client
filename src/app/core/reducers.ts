@@ -12,7 +12,7 @@ export interface State {
 export const reducers: ActionReducerMap<State, GameActionsUnion> = {
   game: CreateGameReducer({game: TicTacToe, numPlayers: 2, multiplayer: false})
 };
-const ai = AI({
+export const ai = AI({
   enumerate: G => {
     let r = [];
     for (let i = 0; i < 9; i++) {

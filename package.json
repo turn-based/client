@@ -28,6 +28,7 @@
     "boardgame.io": "google/boardgame.io#master",
     "boardgame.io-pure-games": "github:turn-based/boardgame.io-pure-games#master",
     "core-js": "^2.5.4",
+    "ng-dynamic-component": "^3.0.0",
     "ngx-init": "0.1.0",
     "ngx-json-viewer": "^2.3.0",
     "rxjs": "^6.0.0",
