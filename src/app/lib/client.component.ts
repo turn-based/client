@@ -56,9 +56,10 @@ export class ClientComponent implements OnInit, OnChanges, AfterContentInit {
       enhancer: this.enhancer,
     });
 
-    this.client.subscribe(() => {
-      console.log('client.subscribe triggered (forceUpdate needed?)');
-    });
+    // todo is this needed? (forceUpdate on react)
+    // this.client.subscribe(() => {
+    //   console.log('client.subscribe triggered (forceUpdate needed?)');
+    // });
   }
 
   ngOnChanges(changes: SimpleChanges) {

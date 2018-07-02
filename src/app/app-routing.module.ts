@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { SinglePlayerExampleComponent } from './examples/tic-tac-toe/single-player-example.component';
 import { MultiPlayerExampleComponent } from './examples/tic-tac-toe/multi-player-example.component';
-import { ChessSinglePlayerExampleComponent } from './examples/chess/chess-single-player-example.component';
 import { AuthenticatedExampleComponent } from './examples/tic-tac-toe/authenticated-example.component';
 import { SpectatorExampleComponent } from './examples/tic-tac-toe/spectator-example.component';
 import { UnsupportedExampleComponent } from './examples/unsupported-example.component';
 import { PhasesExampleComponent } from './examples/phases/phases-example.component';
+import { SecretStateExampleComponent } from './examples/secret-state/secret-state-example.component';
 
 const routes: Routes = [
   {
@@ -47,6 +47,13 @@ const routes: Routes = [
         component: PhasesExampleComponent,
         data: {
           title: 'phases'
+        }
+      },
+      {
+        path: 'liars-dice',
+        component: SecretStateExampleComponent,
+        data: {
+          title: 'Liar\'s Dice'
         }
       },
       {

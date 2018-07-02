@@ -29,6 +29,9 @@ import { AuthenticatedExampleComponent } from './examples/tic-tac-toe/authentica
 import { SpectatorExampleComponent } from './examples/tic-tac-toe/spectator-example.component';
 import { UnsupportedExampleComponent } from './examples/unsupported-example.component';
 import { PhasesBoardComponent, PhasesExampleComponent } from './examples/phases/phases-example.component';
+import { SecretStateBoardComponent, SecretStateExampleComponent } from './examples/secret-state/secret-state-example.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { PhasesBoardComponent, PhasesExampleComponent } from './examples/phases/
     MultiPlayerExampleComponent,
     AuthenticatedExampleComponent,
     SpectatorExampleComponent,
+    SecretStateExampleComponent,
 
     PhasesExampleComponent,
 
@@ -50,12 +54,15 @@ import { PhasesBoardComponent, PhasesExampleComponent } from './examples/phases/
     TicTacToeBoardComponent,
     ChessBoardComponent,
     PhasesBoardComponent,
+    SecretStateBoardComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
 
+    HttpClientModule,
+    FormsModule,
     FlexLayoutModule,
 
     MatDividerModule,
@@ -79,6 +86,7 @@ import { PhasesBoardComponent, PhasesExampleComponent } from './examples/phases/
     TicTacToeBoardComponent,
     ChessBoardComponent,
     PhasesBoardComponent,
+    SecretStateBoardComponent,
   ],
   bootstrap: [AppComponent]
 })
