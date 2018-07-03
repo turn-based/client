@@ -11,7 +11,6 @@ import { DebugComponent } from './debug.component';
   ],
   imports: [
     CommonModule,
-    CommonModule,
 
     DynamicModule.withComponents(null),
   ],
