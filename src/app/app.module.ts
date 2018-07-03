@@ -1,36 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { LobbyPageComponent } from './lobby-page/lobby-page.component';
-import { RoomPageComponent } from './room-page/room-page.component';
-import { MatButtonModule, MatCardModule, MatDividerModule, MatIconModule } from '@angular/material';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { GameTypeCardComponent } from './game-type-card/game-type-card.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { LobbyComponent } from './pages/lobby/lobby.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LobbyPageComponent,
-    RoomPageComponent,
-    GameTypeCardComponent
+    LobbyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-
-    FlexLayoutModule,
-
-    MatDividerModule,
-    MatCardModule,
+    HttpClientModule,
+    RouterModule.forRoot([{
+      path: '',
+      component: LobbyComponent,
+    }]),
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
     MatButtonModule,
+    MatSidenavModule,
     MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
