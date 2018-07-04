@@ -8,11 +8,13 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { LobbyComponent } from './pages/lobby/lobby.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { RoomComponent } from './pages/room/room.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LobbyComponent
+    LobbyComponent,
+    RoomComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([{
       path: '',
       component: LobbyComponent,
-    }]),
+    }, {
+      path: 'games/:gameType/rooms/:roomId',
+      component: RoomComponent,
+    }
+    ]),
     BrowserAnimationsModule,
     LayoutModule,
     MatToolbarModule,
